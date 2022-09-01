@@ -28,7 +28,7 @@ const formValidator = (oldData: Partial<Todo>, params?: any) => ({
   },
   dueDate: (value: any) => {
     if (params.type === 'update') {
-      return formatDate(oldData.dueDate) < formatDate(value)
+      return formatDate(oldData.dueDate) > formatDate(value)
         ? "Due date must be greater than old due date"
         : null;
     }
